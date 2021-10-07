@@ -16,9 +16,9 @@ fetch("/api/transaction")
 
 function populateTotal() {
   // reduce transaction amounts to a single total value
-  let total = transactions.reduce((total, t) => {
-    return total + parseInt(t.value);
-  }, 0);
+  // let total = transactions.reduce((total, t) => {
+  //   return total + parseInt(t.value);
+  // }, 0);
 
   let totalEl = document.querySelector("#total");
   totalEl.textContent = total;
@@ -105,8 +105,8 @@ function sendTransaction(isAdding) {
     transaction.value *= -1;
   }
 
-  // add to beginning of current array of data
-  transactions.unshift(transaction);
+  // // add to beginning of current array of data
+  // transactions.unshift(transaction);
 
   // re-run logic to populate ui with new record
   populateChart();
